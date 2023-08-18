@@ -1,13 +1,19 @@
 import React from 'react'
 import { FaInstagram, FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
+import Flogo from '../components/flogo.png'
+import Image from 'next/image'
 
 const Footer = () => {
     return (
         <div className={'min-h-[60px]'}>
         <div className={'grid sm:grid-cols-1 md:grid-cols-3 p-4 pr-4 bg-blue-900 text-white'}>
-            <div className={'hidden md:flex items-center text-white text-md'}>Logo</div>
-            <div className={'pt-4 flex justify-center items-center text-white text-xl md:hidden'}>Logo</div>
+            <div className={'hidden md:flex items-center text-white text-md'}>
+            <Image width={10000} height={10000} src={Flogo} alt="Logo" className={'w-[100px] h-21'}/>
+            </div>
+            <div className={'pt-4 flex justify-center items-center text-white text-xl md:hidden'}>
+                <Image width={100000} height={1000000} src={Flogo} alt="Logo" className={'w-20 h-20'}/>
+            </div>
             <div className={'hidden md:flex justify-center items-center text-white'}>Digitrans Services © 2023 All Rights Reserved</div>
             <div>
             <div className={'hidden md:flex relative bottom-0 float-right items-center'}>

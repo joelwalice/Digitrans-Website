@@ -22,7 +22,7 @@ const Navbar = () => {
         <div>
             <div className={'flex items-center bg-[#E9F1FA] justify-between border-1 gap-2'}>
                 <div className={''}>
-                    <a href={'/'}><Image src={Logo} className={'max-w-[200px] ml-2 rounded-lg'} alt={'/'} /></a>
+                    <a href={'/'}><Image src={Logo} className={'max-w-[190px] ml-2 rounded-lg'} alt={'/'} /></a>
                 </div>
                 <div className={'hidden md:flex items-center gap-6 pr-4'}>
                     <Link to='about' smooth={true} duration={500}><button className={'text-xl font-semibold border-0 text-[#00387d] p-2 rounded-lg'}>About</button></Link>
@@ -31,25 +31,36 @@ const Navbar = () => {
                 </div>
         
         {/*MenuBar*/}
-        <div onClick = {handleClick} className='md:hidden z-10'>
-            {!isOpen ? 
-            <div className='p-4 ml-4 text-[#00387d] rounded-full cursor-pointer bg-blue-200'><FaBars size={25}  /></div> : 
-            <div className='p-4 pl-4 text-white rounded-full cursor-pointer'><FaTimes size={25} /></div>}
+        <div onClick={handleClick} className="md:hidden z-10">
+          {!isOpen ? (
+            <div className="p-4 mr-4 text-[#00387d] rounded-full cursor-pointer bg-blue-200">
+              <FaBars size={25} />
+            </div>
+          ) : (
+            <div className="p-4 mr-4 text-white rounded-full cursor-pointer">
+              <FaTimes size={25} />
+            </div>
+          )}
         </div>
-        
-        <ul className={!isOpen ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-[#3d3d3e]/80 flex flex-col justify-center items-center'}>
-            <li className='py-6 text-4xl'>
-            <Link to="" smooth={true} duration={500}>Blog</Link>
-            </li>
-            <li className='py-6 text-4xl'>
-            <Link onClick={handleClick} to="about" smooth={true} duration={500}>About</Link>
-            </li>
-            <li className='py-6 text-4xl'>
-            <Link onClick={handleClick} to="services" smooth={true} duration={500}>Services</Link>
-            </li>
-        </ul>
-        
-    </div> 
+      </div>
+
+      <ul className={!isOpen ? 'hidden' : 'fixed top-0 left-0 w-full h-full text-white bg-black/80 flex flex-col justify-center items-center p-4 md:hidden'}>
+        <li className="py-6 text-4xl">
+          <Link onClick={handleClick} to="services" smooth={true} duration={500}>
+            Services
+          </Link>
+        </li>
+        <li className="py-6 text-4xl">
+          <Link onClick={handleClick} to="about" smooth={true} duration={500}>
+            About Us
+          </Link>
+        </li>
+        <li className="py-6 text-4xl">
+          <Link onClick={handleClick} to="contact" smooth={true} duration={500}>
+            Contact Us
+          </Link>
+        </li>
+      </ul>
     </div>    
     )
 }
