@@ -9,13 +9,14 @@ import Logos from "../../components/imageTag.png";
 const Id = () => {
     const router = useRouter()
     const id = router.query.id;
+    let line = '';
     useEffect(() => {
         const element = document.querySelector('#value');
         if (element && typeof window !== "undefined") {
             element.innerHTML = line;
         }
     }, [line]);
-    
+
     const gpt = [
         {
     id: 1,
@@ -76,7 +77,6 @@ const gpts = gpt.find(item => item.id === parseInt(id));
             </div>
         );
     }
-    let line = ''
     for(let i=0;i<gpts.values.length;i++){
         line+=gpts.values[i];
         if(gpts.values[i]===":"){

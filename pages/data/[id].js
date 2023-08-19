@@ -9,6 +9,7 @@ import Logos from "../../components/imageTag.png";
 const Id = () => {
     const router = useRouter()
     const id = router.query.id;
+    let line = '';
     useEffect(() => {
         if(typeof window !== "undefined"){
           const element = document.querySelector('#value');
@@ -75,7 +76,6 @@ const gpts = gpt.find(item => item.id === parseInt(id));
             </div>
         );
     }
-    let line = ''
     for(let i=0;i<gpts.values.length;i++){
         line+=gpts.values[i];
         
