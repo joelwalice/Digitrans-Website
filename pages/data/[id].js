@@ -91,8 +91,10 @@ const gpts = gpt.find(item => item.id === parseInt(id));
         }
     }
     useEffect(() => {
+        if(typeof window !== "undefined"){
           const element = document.querySelector('#value');
           element.innerHTML = line
+        }
       }, []);
     
     return (
