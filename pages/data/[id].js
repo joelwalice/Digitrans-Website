@@ -72,13 +72,12 @@ const gpts = gpt.find(item => item.id === parseInt(id));
     let line = ''
     for(let i=0;i<gpts.values.length;i++){
         line+=gpts.values[i];
-        console.log({i})
+        
         if(gpts.values[i]===":"){
             while(gpts.values[i]!==" " && i>-1){
                 line = [...line]
                 line.pop()
                 i--
-                console.log({i})
             }
             line = line.join('')
             line+='<br><b>'
@@ -95,7 +94,7 @@ const gpts = gpt.find(item => item.id === parseInt(id));
           const element = document.querySelector('#value');
           element.innerHTML = line
         }
-      }, []);
+      }, [line]);
     
     return (
         <div>
@@ -113,14 +112,14 @@ const gpts = gpt.find(item => item.id === parseInt(id));
                     <h1 className={'text-4xl md:text-5xl mt-10 mb-[50px] text-orange-600 font-semibold flex items-center justify-center'}>Detailed Description</h1>
                     <p className={'text-lg p-5'}>{gpts.description}</p>
                     <div className='p-5'>
-                    <p className='text-lg font-semibold'>{gpts.details}
+                    <p className='text-2xl font-bold'>{gpts.details}
                     </p>
                     <pre></pre>
                     <p className='text-lg pt-5' id='value'>{gpts.values}</p>
                     </div>
                 </div>
             </div>
-            <div>
+            {/*<div>
                 <h1 className={'pl-6 text-4xl md:text-5xl mt-10 mb-[50px] text-orange-600 font-semibold flex items-center justify-center mr-4'}>Blogs related to {gpts.name}</h1>
                 <div className={'mb-[50px]'}>
             <div className='grid sm:grid-cols-1 md:grid-cols-3 ml-4 mt-6 pr-4 gap-4 scroll-hide'>
@@ -183,7 +182,7 @@ const gpts = gpt.find(item => item.id === parseInt(id));
         </div>
         </div>
         </div>
-        </div>
+    </div>*/}
             {/*<div className={'pb-10'}>
                 <h1 className={'text-4xl md:text-5xl mt-10 mb-[50px] text-orange-600 font-semibold flex items-center justify-center'}>Reviews</h1>
             <div className='grid sm:grid-cols-1 md:grid-cols-3 ml-4 mt-6 pr-4 gap-4 scroll-hide'>
