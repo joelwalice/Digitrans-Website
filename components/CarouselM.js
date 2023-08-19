@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Carousel = () => {
   const images = [
@@ -97,6 +98,8 @@ const Carousel = () => {
     return () => clearInterval(interval);
   }, [currentSlide]);
 
+  const router = useRouter();
+
   return (
     <div>
       <h1 className="ml-4 text-5xl md:text-6xl flex text-[#00387d] font-semibold mt-[100px] mb-10 justify-center">
@@ -144,9 +147,9 @@ const Carousel = () => {
           >
             <h2 className="text-2xl font-bold text-gray-700">{card.title}</h2>
             <p className="mt-2 text-gray-500">{card.details}</p>
-            <a href={cards[cardIndex].r}><button className="rounded-lg bg-blue-600 border-blue-600 shadow-md hover:shadow-lg p-2 text-white mt-2">
+            <button className="rounded-lg bg-blue-600 border-blue-600 shadow-md hover:shadow-lg p-2 text-white mt-2" onClick={() => {router.push(cards[cardIndex].r)}}>
               See more
-            </button></a>
+            </button>
           </div>
         ))}
       </div>
