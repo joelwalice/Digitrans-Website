@@ -155,8 +155,8 @@ const gpts = gpt.find(item => item.id === parseInt(id));
         </div>
         </div>
         </div>
-        {/*
-            <div className={'pb-10'}>
+       
+          {/*<div className={'pb-10'}>
                 <h1 className={'text-4xl md:text-5xl mt-10 mb-[50px] text-orange-600 font-semibold flex items-center justify-center'}>Reviews</h1>
             <div className='grid sm:grid-cols-1 md:grid-cols-3 ml-4 mt-6 pr-4 gap-4 scroll-hide'>
                 <div className='shadow-lg pl-4 shadow-[#040c16] bg-gray-400 hover:scale-105 duration-500 group container rounded-md flex justify-center items-center mx-auto content-div'>

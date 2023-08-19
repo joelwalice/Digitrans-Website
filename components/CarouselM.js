@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BsChevronRight, BsChevronLeft } from 'react-icons/bs';
 import { RxDotFilled } from 'react-icons/rx';
+import Link from 'next/link';
 
 const Carousel = () => {
   const images = [
@@ -143,9 +144,9 @@ const Carousel = () => {
           >
             <h2 className="text-2xl font-bold text-gray-700">{card.title}</h2>
             <p className="mt-2 text-gray-500">{card.details}</p>
-            <button className="rounded-lg bg-blue-600 border-blue-600 shadow-md hover:shadow-lg p-2 text-white mt-2">
+            <Link href={cards[cardIndex].r}><button className="rounded-lg bg-blue-600 border-blue-600 shadow-md hover:shadow-lg p-2 text-white mt-2">
               See more
-            </button>
+            </button></Link>
           </div>
         ))}
       </div>

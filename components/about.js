@@ -10,7 +10,7 @@ const About = () => {
             </div>
             <div>
                 {/* eslint-disable-next-line react/no-unescaped-entities */}
-                <p className='sm:text-0.8xl text-white items-center'>Digitranss AI is your full-cycle AI development partner, from concept to production and beyond. We're not just machine learning specialists, we're the team that helps startups and enterprises create cutting-edge AI products that optimize efficiency and accelerate growth. Led by founder Liam Ottley, we guide you through the entire process and shape your ideas into ready-to-go solutions. With our expertise across multiple industries, we'll help you build an innovative product that fosters your company's success.</p>
+                <p className='sm:text-0.8xl text-white items-center'>Digitranss AI is your full-cycle AI development partner, from concept to production and beyond. We're not just machine learning specialists, we're the team that helps startups and enterprises create cutting-edge AI products that optimize efficiency and accelerate growth. We guide you through the entire process and shape your ideas into ready-to-go solutions. With our expertise across multiple industries, we'll help you build an innovative product that fosters your company's success.</p>
             </div>
 
         </div>

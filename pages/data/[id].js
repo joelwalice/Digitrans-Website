@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { useRouter } from 'next/router'
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -41,7 +41,7 @@ const Id = () => {
     image: 'https://images.unsplash.com/photo-1661956602944-249bcd04b63f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80',
     description: "Greetings! I am genuinely excited to introduce you to our potent consulting services, meticulously designed to propel your business toward unprecedented heights. At Digitrans, we're not just consultants – we're dedicated partners, fully invested in your triumph. Imagine the assurance of having a trusted advisor by your side, equipped with fresh insights and strategic finesse to conquer your business challenges. That's exactly what we offer. ",
     details : "Benefits That Await You?",
-    values:"Strategic Navigation: Allow us to chart a lucid trajectory for your aspirations, meticulously crafting a bespoke roadmap to shepherd your voyage. Innovative Solutions: Stymied by an obstacle? Our prowess lies in providing ingenious solutions that dismantle barriers and ignite growth. Novel Perspective: Harness the power of an external viewpoint that catalyzes innovation, ensuring you stay at the forefront of a dynamic market. Empowerment Through Skill: Through targeted training, we empower your team with enhanced abilities that guarantee enduring success. Measured Results: Our strategies are calibrated for quantifiable outcomes, guaranteeing your Return on Investment remains a paramount priority. Are you poised for unprecedented achievement? Let's establish a connection. Your victory is our driving force.",
+    values:"Strategic-Navigation: Allow us to chart a lucid trajectory for your aspirations, meticulously crafting a bespoke roadmap to shepherd your voyage. Innovative Solutions: Stymied by an obstacle? Our prowess lies in providing ingenious solutions that dismantle barriers and ignite growth. Novel Perspective: Harness the power of an external viewpoint that catalyzes innovation, ensuring you stay at the forefront of a dynamic market. Empowerment Through Skill: Through targeted training, we empower your team with enhanced abilities that guarantee enduring success. Measured Results: Our strategies are calibrated for quantifiable outcomes, guaranteeing your Return on Investment remains a paramount priority. Are you poised for unprecedented achievement? Let's establish a connection. Your victory is our driving force.",
     price1: "1000",
     price2: "2000",
     price3: "3000",
@@ -69,7 +69,32 @@ const gpts = gpt.find(item => item.id === parseInt(id));
             </div>
         );
     }
-
+    let line = ''
+    for(let i=0;i<gpts.values.length;i++){
+        line+=gpts.values[i];
+        console.log({i})
+        if(gpts.values[i]===":"){
+            while(gpts.values[i]!==" " && i>-1){
+                line = [...line]
+                line.pop()
+                i--
+                console.log({i})
+            }
+            line = line.join('')
+            line+='<br><b>'
+            while(gpts.values[i]!==":"){
+                line+=gpts.values[i]
+                i++
+                console.log({i})
+            }
+            line+=':</b>'
+        }
+    }
+    useEffect(() => {
+          const element = document.querySelector('#value');
+          element.innerHTML = line
+      }, []);
+    
     return (
         <div>
             <title>{gpts.name}</title>
@@ -86,8 +111,10 @@ const gpts = gpt.find(item => item.id === parseInt(id));
                     <h1 className={'text-4xl md:text-5xl mt-10 mb-[50px] text-orange-600 font-semibold flex items-center justify-center'}>Detailed Description</h1>
                     <p className={'text-lg p-5'}>{gpts.description}</p>
                     <div className='p-5'>
-                    <p className='text-lg font-semibold'>{gpts.details}</p>
-                    <p className='text-lg pt-5'>{gpts.values}</p>
+                    <p className='text-lg font-semibold'>{gpts.details}
+                    </p>
+                    <pre></pre>
+                    <p className='text-lg pt-5' id='value'>{gpts.values}</p>
                     </div>
                 </div>
             </div>
