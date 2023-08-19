@@ -19,7 +19,7 @@ export default function Home() {
       <title>Digitranss AI</title>
       <Navbar />
         <div>
-          <Image width={10000} src={Logos} className='hidden md:flex w-screen min-h-[480px]' />
+          <Image width={1000} src={Logos} className='hidden md:flex w-screen min-h-[480px]' />
           <Image width={1000} src={Logos} className='flex w-screen md:hidden' />
         </div>
       <Cards />

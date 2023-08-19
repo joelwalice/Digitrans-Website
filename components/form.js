@@ -4,7 +4,7 @@ const Form = () => {
     return (
         <div>
             <div className="bg-gray-300 pb-10 flex flex-col items-center justify-center">
-        <div className="text-4xl md:text-6xl pl-4 flex text-orange-600 font-semibold pt-10 mb-10 justify-center items-center">
+        <div className="text-4xl md:text-6xl pl-4 flex text-[#00387d] font-semibold pt-10 mb-10 justify-center items-center">
         <h1>Lets get in touch</h1>
         </div>
         <form action="https://formsubmit.co/9f7b23267d0ae6e708ba229280d19db6" className="flex flex-col pl-4 items-center justify-center w-full gap-5" method="POST" >

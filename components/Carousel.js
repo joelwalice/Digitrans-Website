@@ -103,7 +103,7 @@ const Carousel = () => {
 
   return (
     <div className={'mb-10'}>
-      <h1 className={'ml-4 text-5xl md:text-6xl flex text-orange-600 font-semibold mt-[100px] mb-10 items-center justify-center'}>
+      <h1 className={'ml-4 text-5xl md:text-6xl flex text-[#00387d] font-semibold mt-[100px] mb-10 items-center justify-center'}>
         Services we serve
       </h1>
       <div className={'flex items-center justify-center'}>
