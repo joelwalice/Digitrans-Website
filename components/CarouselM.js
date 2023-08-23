@@ -110,8 +110,8 @@ const Carousel = () => {
           style={{ backgroundImage: `url(${images[currentSlide % images.length]})` }}
           className=" image relative w-full h-full rounded-2xl bg-center bg-cover duration-500"
         >
-          <div className='overlay absolute w-full h-full top-0 left-0 bg-black/70 rounded-xl'></div>
-           <div className="details absolute hidden bottom-0 w-full h-full hover:grid place-items-center">
+          <div className='overlay absolute w-full h-full top-0 left-0 bg-black/50 rounded-xl'></div>
+           <div className="details absolute bottom-0 w-full h-full grid place-items-center flex items-center justify-center">
           {cards.map((card, cardIndex) => (
             <div
               key={cardIndex}
@@ -119,8 +119,8 @@ const Carousel = () => {
                 currentSlide === cardIndex ? 'block' : 'hidden'
               } p-5 border-0 rounded-lg`}
             >
-              <h2 className="text-2xl font-bold text-white">{card.title}</h2>
-              <p className="mt-2 text-white">{card.details}</p>
+              <h2 className="text-[22px] font-bold text-white">{card.title}</h2>
+              <p className="mt-2 text-md text-white">{card.details}</p>
               <button className="rounded-lg bg-blue-600 border-blue-600 shadow-md hover:shadow-lg p-2 text-white mt-2" onClick={() => {router.push(cards[cardIndex].r)}}>
                 See more
               </button>
