@@ -108,17 +108,34 @@ const Carousel = () => {
       <div className="max-w-[550px] h-[400px] w-full m-auto py-16 px-4 relative group">
         <div
           style={{ backgroundImage: `url(${images[currentSlide % images.length]})` }}
-          className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
+          className=" image relative w-full h-full rounded-2xl bg-center bg-cover duration-500"
         >
+          <div className='overlay absolute w-full h-full top-0 left-0 bg-black/50 rounded-xl'></div>
+           <div className="details absolute bottom-0 w-full h-full grid place-items-center flex items-center justify-center">
+          {cards.map((card, cardIndex) => (
+            <div
+              key={cardIndex}
+              className={`${
+                currentSlide === cardIndex ? 'block' : 'hidden'
+              } p-5 border-0 rounded-lg`}
+            >
+              <h2 className="text-[22px] font-bold text-white">{card.title}</h2>
+              <p className="mt-2 text-md text-white">{card.details}</p>
+              <button className="rounded-lg bg-blue-600 border-blue-600 shadow-md hover:shadow-lg p-2 text-white mt-2" onClick={() => {router.push(cards[cardIndex].r)}}>
+                See more
+              </button>
+            </div>
+          ))}
+        </div>
           <div
             className={`hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer`}
           >
-            <BsChevronLeft onClick={prevSlide} size={30} />
+            <BsChevronLeft onClick={prevSlide} size={20} />
           </div>
           <div
             className={`hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer`}
           >
-            <BsChevronRight onClick={nextSlide} size={30} />
+            <BsChevronRight onClick={nextSlide} size={20} />
           </div>
         </div>
         <div className="flex justify-center items-center mt-4">
@@ -136,22 +153,6 @@ const Carousel = () => {
             </div>
           ))}
         </div>
-      </div>
-      <div className="mt-2 mb-8 flex justify-center items-center">
-        {cards.map((card, cardIndex) => (
-          <div
-            key={cardIndex}
-            className={`${
-              currentSlide === cardIndex ? 'block' : 'hidden'
-            } p-5 border rounded-lg bg-[#E9F1FA] shadow-xl`}
-          >
-            <h2 className="text-2xl font-bold text-gray-700">{card.title}</h2>
-            <p className="mt-2 text-gray-500">{card.details}</p>
-            <button className="rounded-lg bg-blue-600 border-blue-600 shadow-md hover:shadow-lg p-2 text-white mt-2" onClick={() => {router.push(cards[cardIndex].r)}}>
-              See more
-            </button>
-          </div>
-        ))}
       </div>
     </div>
   );
