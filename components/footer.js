@@ -45,7 +45,7 @@ const Footer = () => {
                 </div>
             <div className={'flex items-center justify-center text-white text-sm md:hidden'}>Digitrans Services © 2023 All Rights Reserved</div>
         <div></div>
-            <h1 className={'flex justify-center items-center'}>Developed by Joel W</h1>
+            {/*<h1 className={'flex justify-center items-center'}>Developed by Joel W</h1>*/}
         </div>
         </div>
     )
